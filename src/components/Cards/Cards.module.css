@@ -1,0 +1,9 @@
+.DivCards{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    font-size: medium;
+}

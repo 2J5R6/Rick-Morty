@@ -1,0 +1,12 @@
+.DivCard{
+    margin: 10px;
+    background-color:rgb(10, 98, 139);
+    border-color: rgb(109, 3, 109);
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+.Image{
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
+}
