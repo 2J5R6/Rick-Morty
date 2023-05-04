@@ -1,0 +1,125 @@
+input[type='search']::placeholder {
+    color: gray;
+    font-family:'Courier New', Courier, monospace;
+  }
+
+  .search-container {
+    position: relative;
+  }
+  
+  input[type='search'] {
+    width: 20rem;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    color: white;
+    background-color: black;
+  }
+  
+  input[type='search']:focus {
+    border-bottom: 2px solid #fff;
+  }
+  
+  input[type='search']:focus ~ .focus-border:before,
+  input[type='search']:focus ~ .focus-border:after {
+    width: 50%;
+  }
+  
+  input[type='search']:focus ~ .focus-border i:before,
+  input[type='search']:focus ~ .focus-border i:after {
+    height: 50%;
+  }
+  
+  .focus-border:before,
+  .focus-border:after,
+  .focus-border i:before,
+  .focus-border i:after {
+    content: '';
+    position: absolute;
+    transition: all 0.3s;
+  }
+  
+  .focus-border:before,
+  .focus-border:after {
+    height: 2px;
+  }
+  
+  .focus-border:before {
+    top: -1px;
+    left: -1px;
+  }
+  
+  .focus-border:after {
+    bottom: -1px;
+    right: -1px;
+  }
+  
+  .focus-border i:before,
+  .focus-border i:after {
+      width:2px
+  }
+  
+  .focus-border i:before {
+      top:-1px;
+      left:-1px
+  }
+  
+  .focus-border i:after {
+      bottom:-1px;
+      right:-1px
+  }
+  
+  .focus-border:before,
+  .focus-border i:before {
+      background:-webkit-linear-gradient(left,transparent,#fff);
+      background:-moz-linear-gradient(left,transparent,#fff);
+      background:-o-linear-gradient(left,transparent,#fff);
+      background:-ms-linear-gradient(left,transparent,#fff);
+      background:linear-gradient(left,transparent,#fff)
+  }
+  
+  .focus-border:after,
+  .focus-border i:after {
+      background:-webkit-linear-gradient(right,transparent,#fff);
+      background:-moz-linear-gradient(right,transparent,#fff);
+      background:-o-linear-gradient(right,transparent,#fff);
+      background:-ms-linear-gradient(right,transparent,#fff);
+      background:linear-gradient(right,transparent,#fff)
+  }
+
+
+button {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+button:hover {
+  animation: glowing 1300ms infinite;
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #000000;
+    box-shadow: 0 0 5px #000000, 0 0 25px #000000, 0 0 50px #000000, 0 0 100px #000000;
+  }
+  
+  50% {
+    background-color: #fff;
+    box-shadow: 0 0 20px #fff, 0 0 60px #fff, 0 0 100px #fff, 0 0 150px #fff;
+    
+    color:black
+    }
+  
+    to {
+        background-color:#000000;
+        box-shadow:0px
+    }
+}
