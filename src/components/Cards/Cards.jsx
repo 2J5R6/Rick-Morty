@@ -1,7 +1,14 @@
 import Card from "../Card/Card.jsx";
 import styles from "./Cards.module.css";
+
+
 export default function Cards({characters, onClose}) {
    // const { characters } = props;
+   // function onClose(id){ // id del nuevo character
+   //    const byecharacter= characters.filter(char=>char.id!==id);
+   //    setCharacters(byecharacter)
+   //   };
+
    return (
    <div className={styles.DivCards}>
       {characters.map(propi=>{
@@ -14,7 +21,7 @@ export default function Cards({characters, onClose}) {
           gender={propi.gender}
           origin={propi.origin?.name}
           image={propi.image}
-          onClose={onClose}
+          onClose={()=>onClose(propi.id)}
             />
          )
       })}
