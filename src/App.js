@@ -7,6 +7,7 @@ import axios from "axios"
 
 function App () {
   const [characters, setCharacters]=useState([]);
+  const [allCharac, setAllCharac]= useState([]);
 
   function onSearch(id){ // id del nuevo character
     // setCharacters([...characters, newCharacter])
@@ -14,6 +15,7 @@ function App () {
     console.log(data)
       if (data.name) {
          setCharacters((oldChars) => [...oldChars, data]);
+         setAllCharac((oldChars) => [...oldChars, data]);
       } else {
         window.alert('¡No hay personajes con este ID!');
       }
@@ -32,6 +34,7 @@ function App () {
     <div className='App' style={{ padding: '25px' }}>
         <Nav onSearch={onSearch}/>
         <Cards characters={characters} onClose={onClose}/>
+        <button onClick={()=> setCharacters(allCharac)}>Reset</button>
 
     </div>
   )

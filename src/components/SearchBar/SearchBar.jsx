@@ -10,7 +10,7 @@ export default function SearchBar({onSearch}) {
       <div className="search-container">
          <input 
          type='search' 
-         placeholder='Search'
+         placeholder='Search (1 to 826)'
          onChange={handleChange}
          value={id}
          />
