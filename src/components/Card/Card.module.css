@@ -67,18 +67,18 @@
     transform: translateY(0) rotateX(0);
   }
 
-  h2 {
+  .cardh2 {
     position: relative;
     transition: transform 0.3s ease-in-out;
     color: rgba(255, 255, 255, 0.768);
   }
   
-  h2:hover {
+  .cardh2:hover {
     transform: scale(1.1);
     color: white;
   }
   
-  h2:hover::before {
+  .cardh2:hover::before {
     content: "";
     position: absolute;
     left: -20px;
