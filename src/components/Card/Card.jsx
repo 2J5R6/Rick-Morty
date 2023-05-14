@@ -25,9 +25,11 @@ export default function Card(props) {
             data-front="To another dimention" 
             data-back="Going to C-137" 
          >Delete</button>
+
          <Link to={`/detail/${props.id}`}>
          <h2 className={styles.cardh2}>{props.name}</h2>
          </Link>
+         
          <h2 className={styles.cardh2}>{props.status}</h2>
          <h2 className={styles.cardh2}>{props.species}</h2>
          <h2 className={styles.cardh2}>{props.gender}</h2>
