@@ -2,7 +2,6 @@ import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { NavLink } from "react-router-dom";
-import navSyles from "../Nav/Nav.module.css"
 import styles from "./Detail.module.css"
 
 export default function Detail(){
@@ -38,7 +37,7 @@ useEffect(() => {
         <div>LOADING</div>
     }
         <NavLink to={"/home"} className={styles.flashback}>
-            <button className={navSyles.agrego}>Back</button>
+            <button className={styles.agrego}>Back</button>
         </NavLink>
     </>
     );
