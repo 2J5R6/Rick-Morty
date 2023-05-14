@@ -1,15 +1,22 @@
-input[type='search']::placeholder {
-    color: gray;
-    font-family:'Courier New', Courier, monospace;
-  }
+input{
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
 
-  .search-container {
-    position: relative;
-  }
-  
-  input[type='search'] {
-    width: 20rem;
-    padding: 12px 20px;
+input[type='search']::placeholder {
+  color: gray;
+  font-family:'Courier New', Courier, monospace;
+  padding: 20px 30px;
+}
+
+.search-container {
+  position: relative;
+}
+
+input[type='search'] {
+    width: 30rem;
+    padding: 20px 30px;
+    font-size: 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
@@ -21,6 +28,7 @@ input[type='search']::placeholder {
   
   input[type='search']:focus {
     border-bottom: 2px solid #fff;
+    width: 37rem;
   }
   
   input[type='search']:focus ~ .focus-border:before,
@@ -92,14 +100,16 @@ input[type='search']::placeholder {
 
 
 button {
-  padding: 12px 20px;
+  padding: 20px 30px;
+  font-size: 20px;
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
   color: white;
   background-color: black;
   cursor: pointer;
-
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 
 button:hover {

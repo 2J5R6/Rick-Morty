@@ -31,7 +31,14 @@
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
+    right: 0;
+    width: 100%;
   }
+
+  /* .Button[data-front="data-front"] {
+    text-align: center;
+  } */
+
   .Button:hover:after {
     opacity: 1;
     transform: translateY(0) rotateX(0);
@@ -58,7 +65,6 @@
     opacity: 1;
     color: #000000;
     display: block;
-    padding: 0 100px;
     line-height: 40px;
     transition: 0.7s;
     position: relative;

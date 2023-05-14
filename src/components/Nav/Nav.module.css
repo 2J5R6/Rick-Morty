@@ -1,6 +1,6 @@
-/* SearchBar.module.css */
 .agrego {
-    padding: 12px 20px;
+    padding: 20px 30px;
+    font-size: 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
@@ -44,7 +44,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
    }
    
    .navLinks {

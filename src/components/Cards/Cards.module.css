@@ -1,9 +1,40 @@
 .DivCards{
     margin: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items:center;
+    /* justify-content: center;
+    align-items:center; */
     font-size: medium;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 10px;
 }
+
+@media (min-width: 768px) {
+    .DivCards {
+     grid-template-columns: repeat(2, 1fr);
+    }
+   }
+   
+   @media (min-width: 992px) {
+    .DivCards {
+     grid-template-columns: repeat(3, 1fr);
+    }
+   }
+   
+   @media (min-width: 1200px) {
+    .DivCards {
+     grid-template-columns: repeat(4, 2fr);
+    }
+   }
+
+   @media (min-width: 1500px) {
+    .DivCards {
+     grid-template-columns: repeat(5, 1fr);
+    }
+   }
+   /* @media (max-width: 767px) {
+    .DivCards {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        max-height: 150px;
+        overflow: hidden;
+       } 
+     } */

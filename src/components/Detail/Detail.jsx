@@ -25,7 +25,7 @@ useEffect(() => {
     {character?.name ?  (
         <div className={styles.info}>
             <div>
-            <h1>Name: {character.name}</h1>
+            <h1>{character.name}</h1>
             <h2>Status: {character.status}</h2>
             <h2>Species: {character.species}</h2>
             <h2>Gender: {character.gender}</h2>

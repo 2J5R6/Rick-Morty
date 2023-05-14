@@ -7,7 +7,7 @@
 
 .info > div {
   margin-right: 5rem; /* increased margin */
-  color: white;
+  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
