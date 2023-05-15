@@ -3,7 +3,7 @@ import styles from "./Form.module.css"
 
 const Form = () => {
 
-    const [userData,setForm]=useState({
+    const [userData,setUserData]=useState({
         email:"",
         password:"",
     });
@@ -18,15 +18,15 @@ const Form = () => {
         const property=event.target.name;
         const value=event.target.value;
     
-        setForm({...userData, [property]: value});
+        setUserData({...userData, [property]: value});
         // validate({...userData, [property]: value}, setErrors, errors);
     };
     
 
 
 return (
-    <div className={styles.card}>
-    <img src={"https://th.bing.com/th/id/OIG.Lt_QGco2XJ3.L3KFBr4I?w=270&h=270&c=6&r=0&o=5&dpr=1.5&pid=ImgGn"} alt="Logo" />
+    <div className={styles.card}>    {/* https://th.bing.com/th/id/OIG.NYWs96BhvOsRCJRCd97R?pid=ImgGn */}
+    <img className={styles.imaF} src={"https://th.bing.com/th/id/OIG.Lt_QGco2XJ3.L3KFBr4I?w=270&h=270&c=6&r=0&o=5&dpr=1.5&pid=ImgGn"} alt="Logo" />
     <form>
         <label htmlFor='email'>Email</label>
             <input 
