@@ -1,4 +1,4 @@
-import './SearchBar.module.css';
+import styles from './SearchBar.module.css';
 import { useState } from 'react';
 export default function SearchBar({onSearch}) {
    const [id, setId]=useState("");
@@ -17,7 +17,7 @@ export default function SearchBar({onSearch}) {
          <span className="focus-border">
             <i></i>
          </span>
-      <button onClick={()=>onSearch(id)}>Agregar</button>
+      <button className={styles.adding} onClick={()=>onSearch(id)}>Agregar</button>
       </div>
    );
 }

@@ -1,23 +1,27 @@
+//Styles
 import './App.css'
+//Commons imports
 import axios from "axios"
 import { useState} from 'react'
-import { Routes, Route } from 'react-router-dom'
+//Router-DOM
+import { Routes, Route, useLocation } from 'react-router-dom'
+//Componentes
 import Cards from './components/Cards/Cards.jsx'
 import Nav from './components/Nav/Nav'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
+import Form from './components/Form/Form'
 
 function App () {
   const [characters, setCharacters]=useState([]);
-  // const [allCharac, setAllCharac]= useState([]);
+
+  const location=useLocation()
 
   function onSearch(id){ // id del nuevo character
-    // setCharacters([...characters, newCharacter])
    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
     console.log(data)
       if (data.name) {
          setCharacters((oldChars) => [...oldChars, data]);
-        //  setAllCharac((oldChars) => [...oldChars, data]);
       } else {
         window.alert('¡No hay personajes con este ID!');
       }
@@ -38,22 +42,23 @@ function App () {
 
   return (
     <div className='App' style={{ padding: '25px' }}>
-    <Nav onSearch={onSearch}/>
-      
-    <Routes>
-
-        <Route path="/home" element={
-          <Cards characters={characters} onClose={onClose} >
-            {/* <button onClick={()=> setCharacters(allCharac)}>Reset</button> */}
-          </Cards>
-          }>
-        </Route>
-      
-        <Route path="/about" element={<About/>} />
+    {
+      location.pathname !== "/" &&
+      <Nav onSearch={onSearch}/>
+    }
         
-        <Route path="/detail/:id/" element={<Detail/>}/>
+      <Routes>
+          <Route path='/' element={<Form/>} />
 
-    </Routes>
+          <Route path="/home" element={
+            <Cards characters={characters} onClose={onClose} />
+            }>
+          </Route>
+        
+          <Route path="/about" element={<About/>} />
+          <Route path="/detail/:id/" element={<Detail/>}/>
+
+      </Routes>
 
     </div>
   );

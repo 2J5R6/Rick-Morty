@@ -99,7 +99,7 @@ input[type='search'] {
   }
 
 
-button {
+.adding {
   padding: 20px 30px;
   font-size: 20px;
   margin: 8px 0;
@@ -112,7 +112,7 @@ button {
   border-bottom-right-radius: 2rem;
 }
 
-button:hover {
+.adding:hover {
   animation: glowing 1300ms infinite;
 }
 

@@ -23,7 +23,7 @@
     padding: 0 0;
     opacity: 1;
     outline: 0;
-    color: #065bd3a4;
+    color: #978d09c4;
     line-height: 40px;
     position: relative;
     text-align: center;
@@ -33,19 +33,19 @@
     text-transform: uppercase;
     right: 0;
     width: 100%;
+    background-color: #000000;
   }
 
-  /* .Button[data-front="data-front"] {
-    text-align: center;
-  } */
-
+ 
   .Button:hover:after {
     opacity: 1;
     transform: translateY(0) rotateX(0);
+    animation: glowing 1300ms infinite;
   }
   .Button:hover:before {
     opacity: 0;
     transform: translateY(50%) rotateX(90deg);
+    animation: glowing 1300ms infinite;
   }
   .Button:after {
     top: 0;
@@ -71,6 +71,25 @@
     background: #978d09c4;
     content: attr(data-front);
     transform: translateY(0) rotateX(0);
+  }
+
+  @keyframes glowing {
+    0% {
+      background-color: #000000;
+      box-shadow: 0 0 5px #000000, 0 0 25px #000000, 0 0 50px #000000, 0 0 100px #000000;
+    }
+    
+    50% {
+      background-color: #fff;
+      box-shadow: 0 0 20px #fff, 0 0 60px #fff, 0 0 100px #fff, 0 0 150px #fff;
+      
+      color:black
+      }
+    
+      to {
+          background-color:#000000;
+          box-shadow:0px
+      }
   }
 
   .cardh2 {

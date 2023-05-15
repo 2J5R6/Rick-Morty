@@ -87,48 +87,43 @@
 /* added styles for button */
 
 .agrego {
-   font-size: 2rem; /* increased font-size */
-   margin-top: 2rem; /* added margin */
-   align-self:center; /* centered button */
-}
-.agrego {
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  color: white;
-  background-color: black;
-  cursor: pointer;
-  border-radius: 2rem;
-  transition: transform 0.2s;
- }
- 
- .agrego:hover {
-  transform: scale(1.1);
- }
- 
- .agrego:active {
-  animation: glowing 1300ms infinite;
- }
- 
- @keyframes glowing {
-  0% {
-  background-color: #000000;
-  box-shadow: 0 0 5px #000000, 0 0 25px #000000, 0 0 50px #000000, 0 0 100px #000000;
-  }
- 
-  50% {
-  background-color: #fff;
-  box-shadow: 0 0 20px #fff, 0 0 60px #fff, 0 0 100px #fff, 0 0 150px #fff;
- 
-  color: black;
-  }
- 
-  to {
-  background-color: #000000;
-  box-shadow: 0px;
-  }
- }
- 
+    padding: 20px 30px;
+    font-size: 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: transform 0.2s;
+   }
+   
+   .agrego:hover {
+    transform: scale(1.1);
+    animation: glowing 1300ms infinite;
+   }
+   
+   
+   
+   @keyframes glowing {
+    0% {
+    background-color: #000000;
+    box-shadow: 0 0 5px #000000, 0 0 25px #000000, 0 0 50px #000000, 0 0 100px #000000;
+    }
+   
+    50% {
+    background-color: #fff;
+    box-shadow: 0 0 20px #fff, 0 0 60px #fff, 0 0 100px #fff, 0 0 150px #fff;
+   
+    color: black;
+    }
+   
+    to {
+    background-color: #000000;
+    box-shadow: 0px;
+    }
+   }
+   
 
 
