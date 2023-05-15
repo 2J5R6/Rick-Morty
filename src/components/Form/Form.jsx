@@ -23,7 +23,8 @@ const Form = () => {
     };
     
 
-  return (
+
+return (
     <div className={styles.card}>
     <img src={"https://th.bing.com/th/id/OIG.NYWs96BhvOsRCJRCd97R?pid=ImgGn"} alt="Logo" />
     <form>
@@ -47,7 +48,7 @@ const Form = () => {
             className={errors.password ? styles.error : styles.success}
             />
 
-        <button type="submit" className='styles.buttonSent'>Submit</button>
+        <button type="submit" className={styles.buttonSent}>Submit</button>
     </form>
     </div>
   )
