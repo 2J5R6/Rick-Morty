@@ -2,9 +2,9 @@
 import './App.css'
 //Commons imports
 import axios from "axios"
-import { useState} from 'react'
+import { useState, useEffect} from 'react'
 //Router-DOM
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 //Componentes
 import Cards from './components/Cards/Cards.jsx'
 import Nav from './components/Nav/Nav'
@@ -15,7 +15,14 @@ import Form from './components/Form/Form'
 function App () {
   const [characters, setCharacters]=useState([]);
 
-  const location=useLocation()
+  const location=useLocation();
+  const navigate=useNavigate();
+
+  const [access, setAccess] = useState(false);
+  //---------------FAKE CREDENTIAL------
+  const f_email="asd@qwe.com"
+  const f_passw="!1234As"
+  //------------------------------------
 
   function onSearch(id){ // id del nuevo character
    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
@@ -36,19 +43,28 @@ function App () {
    setCharacters(byecharacter)
   };
 
-  // useEffect(() => {
-  //   console.log(characters);
-  // }, [characters]);
+  useEffect(() => {
+    !access && navigate('/');
+ }, [access]);
+
+  const login=({email, password})=>{
+    if(f_email===email && f_passw===password){
+      setAccess(true);
+      navigate("/home");
+    }else{
+      alert("Credenciales inválidas")
+    }
+  }
 
   return (
     <div className='App' style={{ padding: '25px' }}>
-    {
+  {//----uso propiedad pathname de useLocation, podría usar destructuring al definir-------
       location.pathname !== "/" &&
       <Nav onSearch={onSearch}/>
-    }
+  }
         
       <Routes>
-          <Route path='/' element={<Form/>} />
+          <Route path='/' element={<Form login={login} />} />
 
           <Route path="/home" element={
             <Cards characters={characters} onClose={onClose} />
