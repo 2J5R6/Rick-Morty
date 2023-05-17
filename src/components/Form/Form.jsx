@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styles from "./Form.module.css"
+import validation from './validation';
 
 const Form = () => {
 
@@ -19,7 +20,8 @@ const Form = () => {
         const value=event.target.value;
     
         setUserData({...userData, [property]: value});
-        // validate({...userData, [property]: value}, setErrors, errors);
+        // validation({...userData, [property]: value}, errors, setErrors);
+        setErrors(validation({...userData, [property]: value}, errors));
     };
     
 
@@ -35,9 +37,11 @@ return (
             name="email"
             value={userData.email}
             onChange={handleChange}
-            className={errors.email ? styles.error : styles.success}
+            className={!errors.email=="" ? styles.error : styles.success}
             />
-        <hr/>
+        <p className={styles.Elerror}>{errors.email}</p>
+
+        
         <label htmlFor='password'>Password</label>
             <input 
             placeholder='Password...'
@@ -45,9 +49,9 @@ return (
             name="password"
             value={userData.password}
             onChange={handleChange}
-            className={errors.password ? styles.error : styles.success}
+            className={!errors.password=="" ? styles.error : styles.success}
             />
-
+        <p className={styles.Elerror}>{errors.password}</p>
         <button type="submit" className={styles.buttonSent}>Submit</button>
     </form>
     </div>
