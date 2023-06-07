@@ -20,8 +20,8 @@ function App () {
 
   const [access, setAccess] = useState(false);
   //---------------FAKE CREDENTIAL------
-  const f_email="asd@qwe.com"
-  const f_passw="!1234As"
+  const f_email="julianrosassan@gmail.com"
+  const f_passw="!12345K"
   //------------------------------------
 
   function onSearch(id){ // id del nuevo character
