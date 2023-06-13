@@ -35,6 +35,7 @@ input[type='search'] {
   padding: 20px 30px;
   font-size: 20px;
   margin: 8px 0;
+  margin-right: 20px;
   box-sizing: border-box;
   border: none;
   color: white;

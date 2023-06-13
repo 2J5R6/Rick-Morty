@@ -23,29 +23,34 @@ function App () {
   const f_email="julianrosassan@gmail.com"
   const f_passw="!12345K"
   //------------------------------------
+//*      Traigo a personajes
+  function onSearch(id){ 
+  if(!characters.some((char)=> char.id == id)){
+   axios(`https://rickandmortyapi.com/api/character/${id}`)
+   .then(({ data }) => {
+  
+      if (data.id ){
+      setCharacters((oldChars) => [...oldChars, data]);
+      } 
+    })
+    
+    .catch((error) => {
+     alert('¡No hay personajes con este ID!');
 
-  function onSearch(id){ // id del nuevo character
-   axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-    console.log(data)
-      if (data.name) {
-         setCharacters((oldChars) => [...oldChars, data]);
-      } else {
-        window.alert('¡No hay personajes con este ID!');
-      }
    })
-   .catch((error) => {
-    alert('¡No hay personajes con este ID! => ' + error.message);
-  });
+  } else { window.alert('¡Ya lo tienes!');
   };
+}
 
-  function onClose(id){ // id del nuevo character
+
+  function onClose(id){ 
    const byecharacter= characters.filter(char=>char.id!==id);
    setCharacters(byecharacter)
   };
 
   useEffect(() => {
     !access && navigate('/');
- }, [access]);
+ }, [access, navigate]);
 
   const login=({email, password})=>{
     if(f_email===email && f_passw===password){
@@ -60,7 +65,7 @@ function App () {
     <div className='App' style={{ padding: '25px' }}>
   {//----uso propiedad pathname de useLocation, podría usar destructuring al definir-------
       location.pathname !== "/" &&
-      <Nav onSearch={onSearch}/>
+      (<Nav onSearch={onSearch} />)
   }
         
       <Routes>
