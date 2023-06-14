@@ -24,8 +24,7 @@ function Card(props) {
       
 //-----------------Aplico unos estilos----------------------
 const [selected, setSelected] = React.useState(false);
-
-const [bgColor, setBgColor] = React.useState("rgb(10, 98, 139, 0.5)");
+const [bgColor, setBgColor] = React.useState("");
 
 const handleClick = () => {
    setSelected(!selected);
@@ -56,7 +55,7 @@ const handleFavorite=(props)=>{
             )
       }
 
-      <div className={`${styles.DivCard} ${props.status ==="Dead" ? styles.selected : ""}`}
+      <div className={`${styles.DivCard} ${props.status ==="Dead" && styles.selected  }`}
       key={props.id}
       onClick={handleClick}
       style={{ backgroundColor: bgColor }}>
