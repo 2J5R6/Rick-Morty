@@ -9,12 +9,12 @@ input[type='search']::placeholder {
   padding: 20px 30px
 }
 
-.search-container {
+/* .search-container {
   position: relative;
-}
+} */
 
 input[type='search'] {
-    width: 37rem;
+    width: 32rem;
     padding: 20px 30px;
     font-size: 20px;
     margin: 8px 0;
@@ -67,3 +67,17 @@ input[type='search'] {
         box-shadow:0px
     }
 }
+
+/* @media (max-width: 768px) {
+
+  .input[type='search']::placeholder{
+    width: 20rem;
+    padding: 15px 20px;
+    font-size: 10px;
+  }
+
+  .adding {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+} */
