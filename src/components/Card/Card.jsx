@@ -1,22 +1,10 @@
 import React from "react"
 import styles from "./Card.module.css"
+import { useEffect } from "react";
 import {Link} from "react-router-dom"
 // import { useDispatch, useSelector } from "react-redux";
 import { connect } from "react-redux";
 import { addFav, removeFav } from "../../redux/actions";
-
-
-//---------------Uso REDUX--> dispatch para agregar fav------------
-
-// const dispatch=useDispatch();
-// const characters=useSelector((state)=>state.characters);
-
-const mapDispatchToProps=(dispatch)=>{
-   return{
-         addfav: (char)=>{dispatch(addFav(char))},
-         removefav: (id)=>{dispatch(removeFav(id))}
-      }
-}
 
 
 // export default function Card({id,name,species,gender,image,onClose}) 
@@ -34,17 +22,25 @@ const handleClick = () => {
 //-----------Estado local para botón FAV----------
 const [isFav, setIsFav]= React.useState(false);
 
-const handleFavorite=(props)=>{
-   
+
+const handleFavorite=(event)=>{
+   event.preventDefault();
    if (isFav) {
-         setIsFav(false)
-      removeFav(props.id);
-    } else {
+      setIsFav(false)
+      props.removefavCard(props.id);
+   } else {
       setIsFav(true);
-      addFav(props);
-    }
+      props.addfavCard(props);
    }
-   
+}
+useEffect(() => {
+   props.myFavoriteUwu.forEach((fav) => {
+      if (fav.id === props.id) {
+         setIsFav(true);
+      }
+   });
+}, [props.myFavoriteUwu]);
+
    return (
       <div>
       {
@@ -82,4 +78,26 @@ const handleFavorite=(props)=>{
 }
 
 
-   export default connect(null ,mapDispatchToProps)(Card);
+//*---------------Uso REDUX--> dispatch para agregar fav------------
+
+// const dispatch=useDispatch();
+// const characters=useSelector((state)=>state.characters);
+
+export function mapDispatchToProps(dispatch){
+   return{
+         addfavCard: (char)=>{dispatch(addFav(char))},
+         removefavCard: (id)=>{dispatch(removeFav(id))}
+      }
+}
+
+//* Función para que se guarden mis favs
+export function mapStateToProps(state){
+   return {
+      myFavoriteUwu: state.myFavorites
+   }
+}
+
+
+//*      FIN USO DE REDUX
+
+   export default connect(mapStateToProps ,mapDispatchToProps)(Card);

@@ -1,5 +1,5 @@
 const validation=(userData, errors)=>{
- console.log("validation called with:", userData, errors);
+//  console.log("validation called with:", userData, errors);
  let newErrors = {...errors};
  //-------EMAIL-------------
  if (!userData.email) {
