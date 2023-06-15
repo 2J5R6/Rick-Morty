@@ -18,6 +18,10 @@ export default function Nav({ onSearch}) {
            <button className={styles.agrego}>Home</button>
          </NavLink>
 
+         <NavLink to="/fav" className={styles.navLink}>
+           <button className={styles.agrego}>Fav</button>
+         </NavLink>
+
          <NavLink to="/about" className={styles.navLink}>
            <button className={styles.agrego}>About</button>
          </NavLink>
