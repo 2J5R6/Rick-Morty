@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/2J5R6/Rick-Morty/issues"
   },
-  "homepage": "https://github.com/2J5R6/Rick-Morty#readme"
+  "homepage": "https://github.com/2J5R6/Rick-Morty#readme",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
