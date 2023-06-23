@@ -19,14 +19,14 @@ function App () {
   const location=useLocation();
   const navigate=useNavigate();
 
-  const [access, setAccess] = useState(false);
+  const [access, setAccess] = useState(true);
   //---------------FAKE CREDENTIAL------
   const f_email="julianrosassan@gmail.com"
   const f_passw="!12345K"
   //------------------------------------
 //*      Traigo a personajes
   function onSearch(id){ 
-  if(!characters.some((char)=> char.id == id)){
+  if(!characters.some((char)=> char.id === Number(id)) ){
    axios(`https://rickandmortyapi.com/api/character/${id}`)
    .then(({ data }) => {
   

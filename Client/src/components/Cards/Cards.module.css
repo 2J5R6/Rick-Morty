@@ -8,13 +8,13 @@
     grid-gap: 10px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .DivCards {
      grid-template-columns: repeat(2, 1fr);
     }
    }
    
-   @media (min-width: 992px) {
+   @media (min-width: 1020px) {
     .DivCards {
      grid-template-columns: repeat(3, 1fr);
     }
@@ -31,6 +31,7 @@
      grid-template-columns: repeat(5, 1fr);
     }
    }
+
    /* @media (max-width: 767px) {
     .DivCards {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));

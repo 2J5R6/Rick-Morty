@@ -1,0 +1,4 @@
+.Fav{
+    display: flex;
+    flex-wrap: wrap;
+}

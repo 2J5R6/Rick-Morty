@@ -9,8 +9,10 @@ export default function Detail(){
 const [character, setCharacter]=useState({});
 
 const {id}=useParams()
+
 useEffect(() => {
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+    axios(`https://rickandmortyapi.com/api/character/${id}`)
+    .then(({ data }) => {
        if (data.name) {
           setCharacter(data);
        } else {
@@ -19,7 +21,6 @@ useEffect(() => {
     });
     return setCharacter({});
  }, [id]);
-//  console.log(character)
 
     return( <>
     {character?.name ?  (
