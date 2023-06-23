@@ -12,7 +12,7 @@ export default function Cards({characters, onClose}) {
    return (
    <div className={styles.DivCards}>
       {characters.map(propi=>{
-         console.log(propi)
+         // console.log(propi)
          return(
             <Card
           key={propi.id}
