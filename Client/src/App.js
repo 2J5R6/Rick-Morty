@@ -23,7 +23,28 @@ function App () {
   //---------------FAKE CREDENTIAL------
   const f_email="julianrosassan@gmail.com"
   const f_passw="!12345K"
-  //------------------------------------
+//*---------------OLD LOGIN--------------
+  // const login=({email, password})=>{
+  //   if(f_email===email && f_passw===password){
+  //     setAccess(true);
+  //     navigate("/home");
+  //   }else{
+  //     alert("Credenciales inválidas")
+  //   }
+  // }
+//*---------------NEW LOGIN----------------
+
+function login(userData) {
+  const { email, password } = userData;
+  const URL = 'http://localhost:3001/rickandmorty/login/';
+  axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+     const { access } = data;
+     setAccess(data);
+     access && navigate('/home');
+  });
+}
+
+
 //*      Traigo a personajes
   function onSearch(id){ 
   if(!characters.some((char)=> char.id === Number(id)) ){
@@ -53,14 +74,7 @@ function App () {
     !access && navigate('/');
  }, [access, navigate]);
 
-  const login=({email, password})=>{
-    if(f_email===email && f_passw===password){
-      setAccess(true);
-      navigate("/home");
-    }else{
-      alert("Credenciales inválidas")
-    }
-  }
+
 
   return (
     <div className='App' style={{ padding: '25px' }}>

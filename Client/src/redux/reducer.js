@@ -9,19 +9,26 @@ const rootReducer=(state=initialState, action)=>{
     switch(action.type){
         
         case ADD_FAV:
-            return{
-                ...state, 
-                myFavorites: [...state.allCharacters, action.payload],
-                allCharacters: [...state.allCharacters, action.payload]
-            }
+                //*---------------OLD ONE----------
+            // return{
+            //     ...state, 
+            //     myFavorites: [...state.allCharacters, action.payload],
+            //     allCharacters: [...state.allCharacters, action.payload]
+            // }
+                //*---------------NEW ONE----------
+                return { ...state, myFavorites: action.payload, allCharacters: action.payload };
 
         case REMOVE_FAV:
-            return{
-                ...state,
-                myFavorites: [...state.allCharacters.filter((char)=>{return char.id!==parseInt(action.payload)})],
-                allCharacters: [...state.allCharacters.filter((char)=>{return char.id!==parseInt(action.payload)})]
-                }
-        
+                //*---------------OLD ONE----------
+            // return{
+            //     ...state,
+            //     myFavorites: [...state.allCharacters.filter((char)=>{return char.id!==parseInt(action.payload)})],
+            //     allCharacters: [...state.allCharacters.filter((char)=>{return char.id!==parseInt(action.payload)})]
+            //     }
+                //*---------------NEW ONE----------
+                return { ...state, myFavorites: action.payload };
+
+
         case FILTER:
             return{
                 ...state,
