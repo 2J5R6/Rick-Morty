@@ -1,5 +1,7 @@
 const express = require('express');
-const router = require('./routes/index.js')
+const router = require('./routes/index.js');
+const {conn} = require('./DB_connection.js');
+
 //      app
 const server = express();
 const PORT = 3001;
@@ -21,10 +23,18 @@ server.use((req, res, next) => {
  server.use(express.json())
  server.use('/rickandmorty', router)
 
+//* ------------Sincronizo sequelize con BDD----------- 
 
-server.listen(PORT, () => {
-   console.log('Server raised in port: ' + PORT);
-});
+conn.sync({force: true})
+.then(()=>{
+
+   server.listen(PORT, () => {
+      console.log('Server raised in port: ' + PORT);
+   });
+
+
+}).catch( (err)=> console.log('No se ha logrado sincronizar sequelize con BDD '+ err))
+
 
 
 

@@ -17,7 +17,7 @@ const userLogin  = (req,res)=>{
     );
     
     if (valido) res.status(200).json({ access: true });
-    else res.status(200).json({ access: false });
+    else res.status(404).json({ access: false });
 }
 
 
